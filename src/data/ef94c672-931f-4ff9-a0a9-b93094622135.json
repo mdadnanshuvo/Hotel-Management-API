@@ -1,0 +1,53 @@
+{
+  "hotelId": "ef94c672-931f-4ff9-a0a9-b93094622135",
+  "slug": "hotel-xyz",
+  "images": [
+    {
+      "imageSlug": "hotel_xyz_1",
+      "imageUrl": "/uploads/hotel_xyz_1.jpg"
+    },
+    {
+      "imageSlug": "hotel_xyz_2",
+      "imageUrl": "/uploads/hotel_xyz_2.jpg"
+    }
+  ],
+  "title": "Hotel XYZ",
+  "description": "A luxurious hotel in the city",
+  "guestCount": 200,
+  "bedroomCount": 100,
+  "bathroomCount": 100,
+  "amenities": [
+    "Pool",
+    "Gym",
+    "Free WiFi"
+  ],
+  "hostInfo": {
+    "name": "John Doe",
+    "email": "johndoe@example.com"
+  },
+  "address": "123 Street, City, Country",
+  "latitude": 40.7128,
+  "longitude": -74.006,
+  "rooms": [
+    {
+      "roomSlug": "room-101",
+      "roomTitle": "Deluxe Room",
+      "bedroomCount": 1,
+      "bathroomCount": 1,
+      "roomImage": {
+        "imageSlug": "room_101_1",
+        "imageUrl": "/uploads/room_101_1.jpg"
+      }
+    },
+    {
+      "roomSlug": "room-102",
+      "roomTitle": "Standard Room",
+      "bedroomCount": 1,
+      "bathroomCount": 1,
+      "roomImage": {
+        "imageSlug": "room_102_1",
+        "imageUrl": "/uploads/room_102_1.jpg"
+      }
+    }
+  ]
+}
