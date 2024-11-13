@@ -110,5 +110,5 @@
     "skipLibCheck": true ,
     "moduleResolution": "node",                              /* Skip type checking all .d.ts files. */
   }, 
-  "include": ["src/**/*.ts", "src/**/*.tsx", "tests/**/*.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "tests/**/*.ts", "src/jest.config.js"]
 }

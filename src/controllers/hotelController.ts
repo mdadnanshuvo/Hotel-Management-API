@@ -9,6 +9,8 @@ import { Room } from '../models/room.model';
 const DATA_PATH = './src/data';
 
 // Create Hotel with initial room details (empty roomImage)
+
+
 export const createHotel = async (req: Request, res: Response): Promise<void> => {
   try {
     const { title, description, guestCount, bedroomCount, bathroomCount, amenities, hostInfo, address, latitude, longitude, rooms } = req.body;
@@ -17,14 +19,14 @@ export const createHotel = async (req: Request, res: Response): Promise<void> =>
     const slug = slugify(title, { lower: true });
 
     // Initialize rooms with empty roomImage
-    const initialRooms: Room[] = rooms.map((room: Room) => ({
+    const initialRooms = rooms.map((room : Room) => ({
       roomSlug: room.roomSlug,
       roomTitle: room.roomTitle,
       bedroomCount: room.bedroomCount,
       roomImage: "", // Empty initially
     }));
 
-    const newHotel: Hotel = {
+    const newHotel = {
       hotelId,
       slug,
       title,
@@ -41,12 +43,21 @@ export const createHotel = async (req: Request, res: Response): Promise<void> =>
       rooms: initialRooms,
     };
 
+    // Write hotel data to file
     await fs.writeJson(`${DATA_PATH}/${hotelId}.json`, newHotel);
     res.status(201).json({ message: "Hotel created successfully", hotel: newHotel });
   } catch (error) {
-    res.status(500).json({ message: "Failed to create hotel", error });
+    // Improved error handling
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+    res.status(500).json({
+      message: 'Failed to create hotel',
+      error: {
+        message: errorMessage,
+      },
+    });
   }
 };
+
 
 // Get a hotel by its ID
 export const getHotel = async (req: Request, res: Response): Promise<void> => {

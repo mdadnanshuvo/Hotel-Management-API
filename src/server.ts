@@ -15,7 +15,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', hotelRoutes);
 app.use('/', imageRoutes);
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+// Start the server only if this file is executed directly (not during testing)
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
+}
