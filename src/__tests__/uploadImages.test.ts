@@ -38,27 +38,27 @@ describe('Image Upload Tests (Mocked)', () => {
   })
 
 
-//     (fs.pathExists as jest.Mock).mockResolvedValue(true);
-//     (fs.readJson as jest.Mock).mockResolvedValue(mockHotelData);
-//     (fs.writeJson as jest.Mock).mockResolvedValue(undefined);
-//     (fs.ensureDir as jest.Mock).mockResolvedValue(undefined);
+    (fs.pathExists as jest.Mock).mockResolvedValue(true);
+    (fs.readJson as jest.Mock).mockResolvedValue(mockHotelData);
+    (fs.writeJson as jest.Mock).mockResolvedValue(undefined);
+    (fs.ensureDir as jest.Mock).mockResolvedValue(undefined);
 
-//     const response = await request(app)
-//       .post(`/room/${mockHotelData.hotelId}/sample-room/images`)
-//       .attach('image', Buffer.from('test content'), 'roomImage.jpg');
+    const response = await request(app)
+      .post(`/room/${mockHotelData.hotelId}/sample-room/images`)
+      .attach('image', Buffer.from('test content'), 'roomImage.jpg');
 
-//     expect(response.status).toBe(200);
-//     expect(response.body.message).toBe('Images uploaded successfully');
-//   });
+    expect(response.status).toBe(200);
+    expect(response.body.message).toBe('Images uploaded successfully');
+  });
 
-//   it('should return 404 if room not found (mocked)', async () => {
-//     (fs.readJson as jest.Mock).mockResolvedValue({ ...mockHotelData, rooms: [] });
+  it('should return 404 if room not found (mocked)', async () => {
+    (fs.readJson as jest.Mock).mockResolvedValue({ ...mockHotelData, rooms: [] });
 
-//     const response = await request(app)
-//       .post(`/room/${mockHotelData.hotelId}/unknown-room/images`)
-//       .attach('image', Buffer.from('test content'), 'roomImage.jpg');
+    const response = await request(app)
+      .post(`/room/${mockHotelData.hotelId}/unknown-room/images`)
+      .attach('image', Buffer.from('test content'), 'roomImage.jpg');
 
-//     expect(response.status).toBe(404);
-//     expect(response.body.message).toBe('Room not found in this hotel');
-//   });
+    expect(response.status).toBe(404);
+    expect(response.body.message).toBe('Room not found in this hotel');
+  });
 });
