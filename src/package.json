@@ -2,12 +2,12 @@
   "name": "hotel-management-api",
   "version": "1.0.0",
   "main": "server.js",
-  "scripts": {
-    "dev": "ts-node src/server.ts",
-    "build": "tsc",
-    "start": "node dist/server.ts",
-    "test": "jest"
-  },
+ "scripts": {
+  "dev": "ts-node src/server.ts",
+  "build": "tsc",
+  "start": "node dist/server.js",  
+  "test": "jest"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
