@@ -1,3 +1,7 @@
 node_modules/
+<<<<<<< HEAD
+=======
+
+>>>>>>> d549beb426af97f197df6abcbd6f04ce94c3b3f0
 .env
 *.log
